@@ -1,0 +1,85 @@
+Aarsh Mehta and Nupur Divekar
+aarsh@bu.edu and ndivekar@bu.edu
+
+puzzles with 5-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                       10            5.0               277.4
+BFS                          10            5.0                47.1
+DFS (depth limit 20)         10           16.2             19072.7
+DFS (depth limit 50)         10           48.2             49043.0
+Greedy Search (using h1)     10            5.4                70.3
+A* (using h1)                10            5.0                 6.5  
+
+puzzles with 10-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                       09           10.9              3538.1     
+BFS                          10           10.0               747.4
+DFS (depth limit 20)         10           18.8             24858.0
+DFS (depth limit 50)         08           49.0             50515.6
+Greedy Search (using h1)     08           76.0               325.6
+A* (using h1)                10           10.0                27.3
+
+puzzles with 15-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                       06           19.0             10559.0
+BFS                          10           15.0             12672.0
+DFS (depth limit 20)         09           17.7             56589.0
+DFS (depth limit 50)         09           48.5             70523.1
+Greedy Search (using h1)     05           68.2              1295.0
+A* (using h1)                10           15.0               313.8
+
+After analyzing the results, it is clear that the A* searcher is the most effective and efficient searcher when compared to other search methods. It has matched the optimal moves, solved every problem(in a limited time frame) and has the least avg. states tested. BFS has also been able to solve all the puzzles, however it is ever so slightly more time consuming as it computes far more states that A*. Among the 2 DFS, a lower depth limit has been able to solve puzzles more quickly, however this conclusion cannot be solidified as these puzzles have been limited to 15-move optimal solutions, a DFS with depth limit 50 may be favored for more complex puzzles. Greedy Search was found most unreliable as it could not always compute a solution even though it would had less number of avg. states tested. Random searcher proved to be sub-optimal at best when dealing with more complex puzzles, the speed of results computed was highly dependent on chance and the searcher also tested a higher number of states when compared to searchers other than DFS.
+
+heuristic h2
+------------
+This heuristic function assigns points based on the number of tiles that are not only misplaced, but rather if they are either out of their row or column or both. This allows the function identify which puzzles which board will require fewer moves to be solved.
+
+
+puzzles with 18-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)        07         133.7              4594.0
+Greedy (heuristic h2).       10          74.8               254.2
+
+A* (heuristic h1)            10          18.0              1602.0
+A* (heuristic h2)            10          18.0               510.9
+
+puzzles with 21-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)        04         109.0               416.5
+Greedy (heuristic h2)        10          83.4               397.7
+
+A* (heuristic h1)            10          21.0              6301.7
+A* (heuristic h2)            10          21.0              1449.6  
+
+puzzles with 24-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)        06        123.7               2856.2
+Greedy (heuristic h2)        10        114.0                400.4
+
+A* (heuristic h1)            04         24.0              26500.0  
+A* (heuristic h2)            10         24.0               5303.0
+
+puzzles with 27-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)       04        197.5                4285.0
+Greedy (heuristic h2)       10        117.0                 402.5
+
+A* (heuristic h1)            0            0                     0
+A* (heuristic h2)           10         27.0               27526.8
+
+The first impression that the result paint is the failure of the h1 heuristic as we try to compute increasingly complex puzzles. A* continues to perform more effectively than Greedy, when used with both h1 and h2. As seen above, it has a lower average moves than for greedy and needs to test fewer states to find the solution. However as the complexity of the puzzle increases, h1 is seen to take more than reasonable time to solve the puzzle, while h2 manages to find the solution. A* with heuristic h2 is found to be most effective in solving all puzzles, however as the complexity increases the avg number of state increase drastically.
+Overall, Greedy searcher with heuristic h2 is found to be best for solving puzzles in the least time as it uses the least number of avg states. However, with any other solver, it has a trade-off - it take a much higher number of avg. moves that A*. 
