@@ -1,16 +1,3 @@
-#
-# state.py (Final project)
-#
-# A State class for the Eight Puzzle
-#
-# name: Aarsh Mehta
-# email: aarsh@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name: Nupur Divekar
-# partner's email: ndivkar@bu.edu
-#
-
 from board import *
 
 # the list of possible moves, each of which corresponds to

@@ -1,16 +1,3 @@
-#
-# eight_puzzle.py (Final project)
-#
-# driver/test code for state-space search on Eight Puzzles   
-#
-# name: Aarsh Mehta
-# email: aarsh@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name: Nupur Divekar
-# partner's email: ndivkar@bu.edu
-#
-
 from searcher import *
 from timer import *
 
@@ -109,5 +96,3 @@ def process_file(filename, algorithm, param):
     print('solved',solved,'puzzles')
     if moves>0:
         print('averages:', moves/solved,' moves,', total_states_tested/solved, 'states tested')
-        
-        

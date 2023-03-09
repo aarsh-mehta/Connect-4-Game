@@ -1,16 +1,3 @@
-#
-# searcher.py (Final project)
-#
-# classes for objects that perform state-space search on Eight Puzzles  
-#
-# name: Aarsh Mehta
-# email: aarsh@bu.edu
-#
-# If you worked with a partner, put their contact info below:
-# partner's name: Nupur Divekar
-# partner's email: ndivkar@bu.edu
-#
-
 import random
 from state import *
 
